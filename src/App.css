@@ -1,38 +1,172 @@
-.App {
-  text-align: center;
+/*=================================== 
+#GOOGLE FONTS 
+===================================*/
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Croissant+One&family=Lato&display=swap');
+
+/*=================================== 
+#CSS VARIABLES
+===================================*/
+
+:root {
+  --header-height:5rem ;
+
+  /*===============
+   * Colors
+  ===============*/
+
+  --first-color: #ce9466;
+  --first-color-light: #a06a4a;
+  --title-color: hsl(0,0%,100%);
+  --text-color: hsl(0,0%,67%) ;
+  --bg-color: #281915;
+  --container-color: #432f28;
+  --container-color2:#16100e; 
+  /* --container-color: #4d2b1e; */
+  --hsla: hsla(0,0%,0%,0.75) ;
+
+  /*===============
+   * Typography
+  ===============*/
+
+  --body-font: 'Lato', sans-serif;
+  --first-font:'Croissant One', serif;
+  --second-font: 'Architects Daughter', cursive; 
+
+  --biggest-font-size: clamp(2rem, 1.5368rem + 2.1176vw, 3.125rem);
+  --bigger-font-size: clamp(1.875rem, 1.4941rem + 1.7412vw, 2.8rem);
+  --big-font-size: clamp(1.75rem, 1.4412rem + 1.4118vw, 2.5rem);
+  --h1-font-size:1.875rem;
+  --h2-font-size:1.75rem;
+  --h3-font-size: 1.5rem;
+  --largest-font-size: 1.375rem;
+  --larger-font-size: 1.25rem;
+  --large-font-size: 1.125rem;
+  --normal-font-size: 1rem;
+
+  --weight-400: 400;
+  --weight-500: 500 ;
+  --weight-600: 600;
+  --weight-700: 700;
+
+  /*===============
+   * Border-radius
+  ===============*/
+
+  --radius: 0.5rem;
+
+  /*===============
+   * Transition
+  ===============*/
+
+  --transition: ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*=================================== 
+#RESET
+===================================*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+html{
+  scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input,
+textarea,
+button
+body{
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size); 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  font-family: var(--body-font);
+  color: var(--text-color);
+  background: var(--bg-color); 
+}
+
+h1,h2,h3{
+  font-family: var(--second-font);
+  color: var(--title-color);
+  font-weight: var(--weight-400);
+}
+
+ul{
+  list-style: none;
+}
+
+p{
+  line-height: 1.8;
+}
+
+a{
+  text-decoration: none;
+}
+input,textarea{
+  border: none;
+  outline: none;
+}
+img{
+  max-width: 100%;
+}
+
+/*=================================== 
+#RESUABLE CSS CLASSES
+===================================*/
+.container{
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 0.75rem;
+}
+
+.btn{
+  cursor: pointer;
+  display: inline-block;
+  color: var(--title-color);
+  background: var(--first-color);
+  border: 2px solid var(--first-color);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+}
+
+.btn-flex{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  column-gap: 0.25rem;
+}
+.btn:hover{
+  background-color: transparent;
+  color: var(--first-color);
 }
 
-.App-link {
-  color: #61dafb;
+.grid{
+  display: grid;
+  gap: 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.section{
+  padding-block: 7.5rem;
 }
+
+.section-title{
+  font-size: var(--big-font-size);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.section-title::before{
+  content:attr(data-title) ;
+  display: block;
+  color: var(--first-color);
+  font-family: var(--first-font);
+  font-size: var(--h2-font-size);
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.title-left{
+  text-align: left;
+  margin-bottom: 1rem;
+}
+

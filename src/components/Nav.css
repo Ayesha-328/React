@@ -1,0 +1,101 @@
+.header{
+  position:absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.nav{
+  height: calc(var(--header-height)+1.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+}
+.nav-logo{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.nav-logo-img{
+  width: 70px;
+  cursor: pointer;
+}
+.nav-logo-title{
+  cursor: pointer;
+  color: var(--title-color);
+  font-size: var(--h1-font-size);
+  font-weight: 900;
+}
+
+.nav-list{
+  display: flex;
+  column-gap: 2rem;
+}
+.nav-item{
+  transition: 0.3s var(--transition);
+}
+
+.nav-link,.nav-toggle{
+  color: var(--title-color);
+}
+
+.nav-link{
+  cursor: pointer;
+  font-family: var(--body-font);
+  color: var(--title-color);
+  font-size: var(--normal-font-size);
+  font-weight: var(--weight-500);
+}
+.nav-link:hover{
+  color: var(--text-color);
+}
+
+.nav-toggle{
+  font-size: var(--h2-font-size);
+  display: none;
+}
+
+/*===============
+   * Hover Effect
+===============*/
+
+.nav-item:hover{
+  transform: translateY(-0.3rem);
+}
+
+
+/*===============
+   * Scroll Header
+===============*/
+
+.scroll-header{
+  position: fixed;
+  background: var(--hsla);
+
+  /* background-color: var(--container-color); */
+  animation: slide-down 0.7s;
+}
+
+@keyframes slide-down {
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+  
+}
+
+
+/*===============
+   * Active Link
+===============*/
+
+.active,.nav-link:hover{
+  color: var(--first-color) !important; 
+}
+
